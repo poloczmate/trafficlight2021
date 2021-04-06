@@ -3,6 +3,8 @@ package trafficlight.ctrl;
 import trafficlight.gui.TrafficLightGui;
 import trafficlight.states.*;
 
+import java.awt.*;
+
 public class TrafficLightCtrl {
 
     private State greenState;
