@@ -9,14 +9,8 @@ public class RedState implements State{
 
     private TrafficLightColor color = TrafficLightColor.RED;
     @Override
-    public void next(TrafficLightCtrl tlc) {
+    public void nextState(TrafficLightCtrl tlc) {
         tlc.setPreviousState(this);
         tlc.setCurrentState(new GreenState());
-    }
-
-    @Override
-    public void prev(TrafficLightCtrl tlc) {
-        tlc.setPreviousState(this);
-        tlc.setCurrentState(new YellowState());
     }
 }

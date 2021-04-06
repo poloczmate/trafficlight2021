@@ -10,14 +10,8 @@ public class YellowState implements State{
     }
 
     @Override
-    public void next(TrafficLightCtrl tlc) {
+    public void nextState(TrafficLightCtrl tlc) {
         tlc.setPreviousState(this);
         tlc.setCurrentState(new RedState());
-    }
-
-    @Override
-    public void prev(TrafficLightCtrl tlc) {
-        tlc.setPreviousState(this);
-        tlc.setCurrentState(new GreenState());
     }
 }

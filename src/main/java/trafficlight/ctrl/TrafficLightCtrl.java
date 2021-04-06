@@ -67,7 +67,7 @@ public class TrafficLightCtrl {
 
     public void nextState() {
         //TODO handle GUi request and update GUI
-        currentState.next(this);
+        currentState.nextState(this);
         gui.setLight(currentState.getColor());
     }
 }
