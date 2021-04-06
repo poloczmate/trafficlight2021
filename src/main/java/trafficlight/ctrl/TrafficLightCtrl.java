@@ -29,9 +29,10 @@ public class TrafficLightCtrl {
 
     private void initStates() {
         //TODO create the states and set current and previous state
-        greenState = new GreenState();
-        redState = new RedState();
-        yellowState = new YellowState();
+        StatesFactory sf = new StatesFactory();
+        greenState = sf.getState("green");
+        redState = sf.getState("red");
+        yellowState = sf.getState("yellow");
         setCurrentState(redState);
     }
 
