@@ -5,5 +5,6 @@ import trafficlight.gui.TrafficLightGui;
 
 public interface State {
     void nextState(TrafficLightCtrl tlc);
+    State getState();
     TrafficLightColor getColor();
 }

@@ -10,6 +10,11 @@ public class YellowState implements State{
     }
 
     @Override
+    public State getState() {
+        return this;
+    }
+
+    @Override
     public void nextState(TrafficLightCtrl tlc) {
         tlc.setPreviousState(this);
         tlc.setCurrentState(new RedState());
