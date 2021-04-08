@@ -3,15 +3,9 @@ package trafficlight.states;
 import trafficlight.ctrl.TrafficLightCtrl;
 
 public class RedState implements State{
-    private TrafficLightColor color = TrafficLightColor.RED;
-
-    public TrafficLightColor getColor() {
-        return color;
-    }
-
     @Override
-    public State getState() {
-        return this;
+    public TrafficLightColor getState() {
+        return TrafficLightColor.RED;
     }
 
     @Override
