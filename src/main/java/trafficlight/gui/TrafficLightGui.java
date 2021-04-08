@@ -87,7 +87,7 @@ public class TrafficLightGui extends JFrame implements ActionListener {
                  //TODO call the controller
                 trafficLightCtrl.nextState();
                 try {
-                    if (yellow.isOn) {
+                    if (yellow.isOn && trafficLightCtrl.getPreviousState().getColor().equals(TrafficLightColor.GREEN)) {
                         //Thread.sleep(yellowIntervall);
                         Thread.sleep(yellowIntervall/4);
                         yellow.turnOn(false);
@@ -97,7 +97,10 @@ public class TrafficLightGui extends JFrame implements ActionListener {
                         yellow.turnOn(false);
                         Thread.sleep(yellowIntervall/4);
                         yellow.turnOn(true);
-                    } else {
+                    }else if(yellow.isOn && !trafficLightCtrl.getPreviousState().getColor().equals(TrafficLightColor.GREEN)){
+                        Thread.sleep(yellowIntervall);
+                    }
+                    else {
                         Thread.sleep(intervall);
                     }
                 } catch (InterruptedException e) {
